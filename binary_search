@@ -1,0 +1,24 @@
+function binarySearch(arr, searchItem) {
+    let low = 0;
+    let high = arr.length - 1;
+
+    while (low <= high) {
+        
+        let mid = Math.floor((low + high)/2);
+        let guess = arr[mid];
+
+        if (guess === searchItem) {
+            return mid
+        }
+        if (guess > searchItem) {
+            high = mid - 1;
+        } else {
+            low = mid + 1
+        }
+    }
+    return ('No value')
+}
+let array = [1, 3, 5, 7, 9]
+
+console.log(binarySearch(array, 3));
+console.log(binarySearch(array, 0))
